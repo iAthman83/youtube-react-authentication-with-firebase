@@ -1,19 +1,12 @@
-import { useState } from "react";
-import LoginFormComponent from "../components/LoginFormComponent";
-import SignUpFormComponent from "../components/SignUpFormComponent";
+import { Link } from "react-router-dom";
 
 const Home = () => {
-  const [toggleForm, setToggleForm] = useState(true);
-  const handleToggle = () => {
-    setToggleForm(!toggleForm);
-  };
   return (
     <>
-      {toggleForm ? (
-        <LoginFormComponent toggleSignUp={handleToggle} />
-      ) : (
-        <SignUpFormComponent toggleLogin={handleToggle} />
-      )}
+      <h1>Click to go to dashboard</h1>
+      <Link to="/dashboard">
+        <button>Dashboard</button>
+      </Link>
     </>
   );
 };
